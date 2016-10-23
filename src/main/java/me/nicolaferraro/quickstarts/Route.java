@@ -22,15 +22,15 @@ public class Route extends RouteBuilder {
 
         from("direct:async-queue")
                 .id("async-queue")
-                .log("Message pushed to the async queue: ${body}");
+                .log("${body} pushed to the async queue");
 
         from("direct:mail")
                 .id("mail")
-                .log("Message sent via mail: ${body}");
+                .log("${body} sent via mail");
 
         from("direct:file")
                 .id("file")
-                .log("Message written to a file: ${body}");
+                .log("${body} written to a file");
 
 
     }
